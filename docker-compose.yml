@@ -6,7 +6,7 @@ volumes:
 
 services:
   mobius:
-    build: ./dist/mobius
+    image: ghcr.io/mobiusflow/mobius-build-balena_mobius:latest
     privileged: true
     restart: always
     ports:
@@ -28,7 +28,7 @@ services:
       io.resin.features.supervisor-api: "1"
 
   manage:
-    build: ./dist/management
+    image: ghcr.io/mobiusflow/mobius-build-balena_manage:latest
     privileged: true
     network_mode: host
     restart: always
